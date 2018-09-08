@@ -1,0 +1,28 @@
+version: "3"
+services:
+  audit_backend_nginx:
+    restart: always
+    build: ./nginx/
+    ports:
+      - 80:80
+    depends_on:
+      # - audit_backend_mongo
+      - audit_backend_server
+    links:
+      - audit_backend_server:api
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    container_name: audit_backend_nginx
+  
+  audit_backend_server:
+    restart: always
+    build: ./node/
+    env_file:
+      - ./.production.env
+    volumes:
+      - ./../source:/src
+    working_dir: "/src"
+    ports:
+      - 9001:9000
+    container_name: audit_backend_server
+    command : npm run prod

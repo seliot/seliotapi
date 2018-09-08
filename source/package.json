@@ -1,0 +1,38 @@
+{
+  "name": "audit-management-api",
+  "version": "1.0.0",
+  "description": "Audit management API module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "export NODE_ENV=development && npm i && supervisor node server.js",
+    "prod": "sh public/script.sh && export NODE_ENV=production && npm i && supervisor node server.js",
+    "test": "export NODE_ENV=test && npm i && supervisor node server.js"
+  },
+  "keywords": [],
+  "author": "selenite",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.1.1",
+    "diff-json": "^0.1.11",
+    "glob": "^7.1.2",
+    "glue": "5.0.0",
+    "hapi": "17.0.1",
+    "hapi-auth-basic": "^5.0.0",
+    "hapi-auth-keycloak": "3.2.1",
+    "hapi-sequelizejs": "^1.1.0",
+    "hapi-swagger": "^9.0.0",
+    "inert": "^5.1.0",
+    "joi": "^13.0.2",
+    "jsonwebtoken": "^8.1.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.4",
+    "umzug": "^2.1.0",
+    "vision": "^5.3.1",
+    "s3-storage": "2.0.0"
+  },
+  "devDependencies": {
+    "code": "^5.2.0",
+    "eslint": "^4.19.1",
+    "lab": "^15.4.1"
+  }
+}
