@@ -52,13 +52,6 @@ module.exports = {
     auditmanagement: auditmanagementdb
   },
 
-  s3Handler : fileHandler('co.selenite.bankers-suit.audit.dev', {
-    type: 's3',
-    secretAccessKey: 'MZW99cAEAUOD5mLBPU+sQU8fdDsRUH8Qo6+5/m+v',
-    accessKeyId: 'AKIAJ57OY7N6SI3I3JWA',
-    region: 'ap-south-1'
-  }),
-
   server: {
     port: 9000,
     compression: {
